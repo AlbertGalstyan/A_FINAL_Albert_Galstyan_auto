@@ -59,6 +59,9 @@ class TestAuto():
         autocell.select_bus_from_list()
         assert autocell.categroty_attribute() == 'Bus'
         autocell.set_price()
+        autocell.save_btn_click()
+        assert autocell.error_message_count() == 'This is a required field'
+
         autocell.click_my_account()
         autocell.sign_out_click()
         assert autocell.profile_picture_not_displayed() == True
