@@ -8,9 +8,9 @@ from POM.Auto_am.auto_sign_in import Autosignin
                                         #THIS TEST CONTAINS
                                         #5 POM
                                         #BASE PAGE
-                                        #CONFTEST FILE
+                                        #CONFTEST FILE (ABILITY TO RUN TEST ON CHROME,FF, ON VIA DOCKER.)
                                         #DOCKER-COMPOSE FILE
-                                        #CONFIG.JSON FILE (ABILITY TO RUN TEST ON CHROME,FF, ON VIA DOCKER.)
+                                        #CONFIG.JSON FILE 
 class TestAuto():
     """" visit URL(assertion), Chnage Language(assertion),
     input 2 fields for search(assertion),
