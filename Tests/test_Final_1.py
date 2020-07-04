@@ -8,7 +8,7 @@ from POM.Auto_am.auto_sign_in import Autosignin
                                         #THIS TEST CONTAINS
                                         #5 POM
                                         #BASE PAGE
-                                        #CONFTEST FILE (ABILITY TO RUN TEST ON CHROME,FF, ON VIA DOCKER.)
+                                        #CONFTEST FILE (ABILITY TO RUN TEST ON CHROME,FF, OR ON SELENIUM HUB.)
                                         #DOCKER-COMPOSE FILE
                                         #CONFIG.JSON FILE 
 class TestAuto():
