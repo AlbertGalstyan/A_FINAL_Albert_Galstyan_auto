@@ -5,9 +5,16 @@ from POM.Auto_am.auto_searche import Autosearch
 import time
 from POM.Auto_am.auto_sign_in import Autosignin
 
-
+                                        #THIS TEST CONTAINS
+                                        #5 POM
+                                        #BASE PAGE
+                                        #CONFTEST FILE
+                                        #DOCKER-COMPOSE FILE
+                                        #CONFIG.JSON FILE (ABILITY TO RUN TEST ON CHROME,FF, ON VIA DOCKER.)
 class TestAuto():
-
+    """" visit URL(assertion), Chnage Language(assertion),
+    input 2 fields for search(assertion),
+     check for suggestions, search."""
     def test_auto(self, driver):
         homepage = Autohome(driver)
         homepage.open_language_bar()
@@ -25,7 +32,7 @@ class TestAuto():
         homepage.model_click()
         homepage.click_on_car_model()
         homepage.search_btn_click()
-
+        """compare search results with search words(assertion), change view options(assertion), signin"""
         searchpage = Autosearch(driver)
         assert driver.title == 'Search - Auto.am'
         assert "Nissan X-Trail" in searchpage.matching_search_results()
@@ -37,7 +44,7 @@ class TestAuto():
         time.sleep(0.5)
         assert searchpage.search_res_view_attribute() == 'grid'
         searchpage.click_on_signin()
-
+        """checking page is open, input user and pass, signin"""
         signinpage = Autosignin(driver)
         time.sleep(0.5)
         assert driver.title == 'Sign In - Auto.am'
@@ -46,11 +53,12 @@ class TestAuto():
         time.sleep(0.5)
         signinpage.login()
         time.sleep(0.5)
-
+        """asserting we are authorized, click on cell car button"""
         authorized = Autoauthorized(driver)
         assert authorized.profile_pic_diplayed()
         authorized.click_on_cell()
-
+        """chech we are on cell page, choose several fields(assertion),
+         click on save(asserting that there are requried fields that are not filled)"""
         autocell = Autocell(driver)
         time.sleep(0.5)
         assert driver.title == 'Sell - Auto.am'
@@ -61,7 +69,7 @@ class TestAuto():
         autocell.set_price()
         autocell.save_btn_click()
         assert autocell.error_message_count() == 'This is a required field'
-
+        """logout(assertion)"""
         autocell.click_my_account()
         autocell.sign_out_click()
         assert autocell.profile_picture_not_displayed() == True
