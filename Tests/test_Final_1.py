@@ -67,7 +67,7 @@ class TestAuto():
         autocell.select_bus_from_list()
         assert autocell.categroty_attribute() == 'Bus'
         autocell.set_price()
-        autocell.save_btn_click()
+        autocell.save_btn_click() #ISSUE WITH CHROME
         assert autocell.error_message_count() == 'This is a required field'
         """logout(assertion)"""
         autocell.click_my_account()
